@@ -1,0 +1,351 @@
+.owl-carousel {
+    .owl-stage {
+        margin: 0 auto;
+    }
+
+    @media only screen and (min-width: $breakpoint-lg) {
+        pointer-events: initial;
+    }
+}
+
+.owl-item {
+    min-width: 150px;
+
+    &:last-child {
+        // margin-right: 0 !important;
+
+        .order__icon {
+            &:after {
+                display: none;
+            }
+        }
+    }
+
+    @media only screen and (min-width: $breakpoint-lg) {
+        min-width: 210px;
+    }
+}
+
+.order {
+    background: $dark;
+    color: $white;
+
+    position: relative;
+
+    &__background {
+        display: block;
+        object-fit: cover;
+        overflow: hidden;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: $z-index;
+
+        width: auto;
+        height: 100%;
+
+        img {
+            display: block;
+            width: auto;
+            height: 100%;
+        }
+    }
+
+    &__container {
+        padding-top: 60px;
+        padding-bottom: 80px;
+
+        position: relative;
+        z-index: $z-index + 1;
+    }
+
+    &__title {
+        color: $white;
+        @extend %lato-font;
+        font-size: 2rem;
+        font-weight: 900;
+
+        margin-bottom: 20px;
+
+        text-align: center;
+        text-transform: uppercase;
+
+        span {
+            color: $blue-light-0;
+        }
+    }
+
+    &__text {
+        color: $grey-light;
+        @extend %lato-font;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    &__process {
+        margin-bottom: 50px;
+    }
+
+    &__stage {
+        padding: 0 10px;
+
+        position: relative;
+        max-width: 150px;
+
+        p {
+            @extend %lato-font;
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.4rem;
+
+            text-align: center;
+        }
+    }
+
+    &__icon {
+        background: $blue-light-0;
+        border: 5px solid $blue-dark;
+        border-radius: 50%;
+
+        @extend %centered;
+        @extend %transition-default;
+        transition-property: border-color, color;
+
+        margin-bottom: 20px;
+        padding: 16px;
+        position: relative;
+
+        width: 70px;
+        height: 70px;
+
+        &:after {
+            background: url('../../assets/icons/order__dots.svg') no-repeat center center / contain;
+            content: '';
+            display: block;
+
+            position: absolute;
+            top: 50%;
+            right: -105px;
+
+            transform: translateY(-50%);
+
+            width: 90px;
+            height: 4.91px;
+        }
+
+        &:hover {
+            background: $blue-dark;
+            border-color: $blue-light-0;
+
+            svg path {
+                // fill: $blue-dark;
+            }
+        }
+
+        svg {
+            display: block;
+
+            width: 100%;
+            height: auto;
+
+            path {
+                @extend %transition-default;
+                transition-property: fill;
+            }
+        }
+    }
+
+    &__form {
+        // 
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__element {
+        margin-bottom: 20px;
+    }
+
+    &__select {
+        position: relative;
+
+        select {
+            display: none;
+        }
+    }
+
+    &__input {
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid $white;
+        border-radius: 3px;
+        color: $dark;
+
+        @extend %lato-font;
+        font-size: 1.2rem;
+        font-weight: 400;
+
+        padding: 12px 10px;
+
+        @extend %transition-default;
+        transition-property: background, border-color, border-radius, color;
+    }
+
+    &__select-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        &:after,
+        &:before {
+            content: '';
+            display: block;
+
+            @extend %transition-default;
+            transition-property: opacity;
+
+            position: absolute;
+            right: 10px;
+
+            width: 20px;
+            height: 20px;
+        }
+
+        &:after {
+            background: url('../../assets/icons/order__dropdown_closed.svg') no-repeat center center / contain;
+
+            opacity: 1;
+        }
+
+        &:before {
+            background: url('../../assets/icons/order__dropdown_opened.svg') no-repeat center center / contain;
+            
+            opacity: 0;
+        }
+
+        &.opened {
+            background: $grey-transparent;
+            border-color: transparent;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            color: $white;
+
+            &:after {
+                opacity: 0;
+            }
+
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+
+
+    &__select-options {
+        background: $dark;
+        border: 1px solid $dark-light;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+
+        @extend %lato-font;
+        font-size: 1.2rem;
+        font-weight: 400;
+
+        overflow: hidden;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+
+        @extend %transition-default;
+        transition-property: max-height;
+
+        max-height: 0;
+        width: 100%;
+        height: auto;
+
+        &.opened {
+            overflow: scroll;
+            max-height: 140px;
+            height: 140px;
+        }
+
+        div {
+            cursor: pointer;
+            color: $white;
+
+            padding: 0 10px 12px 10px;
+
+            @extend %transition-default;
+            transition-property: color;
+
+            &:first-child {
+                padding-top: 12px;
+            }
+
+            &:hover {
+                color: $blue-light-1;
+            }
+
+            &.selected {
+                color: $blue-light-1;
+            }
+        }
+    }
+
+    @media only screen and (min-width: $breakpoint-lg) {
+
+        &__container {
+            padding-top: 120px;
+            padding-bottom: 150px;
+        }
+
+        &__title {
+            font-size: 3.6rem;
+
+            margin-bottom: 30px;
+        }
+
+        &__text {
+            font-size: 1.8rem;
+            line-height: 2.2rem;
+
+            margin-bottom: 80px;
+        }
+
+        &__process {
+            margin-bottom: 80px;
+        }
+
+        &__stage {
+            max-width: 210px;
+    
+            p {
+                font-size: 1.6rem;
+                line-height: 1.92rem;
+            }
+        }
+
+        &__icon {
+            padding: 18px;
+
+            width: 100px;
+            height: 100px;
+
+            &:after {
+                right: -130px;
+    
+                width: 110px;
+                height: 6px;
+            }
+        }
+    }
+}

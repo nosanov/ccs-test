@@ -1,26 +1,16 @@
-/*
-** TODO: rewrite this with Class
-*/
-
 function initOwlCarousel () {
+
     $(".owl-carousel").owlCarousel({
-        loop: true,
-        margin: 40,
-        responsive:{
-            0: {
-                items: 1,
-                nav: false
-            },
-            600: {
-                items: 3,
-                nav: false
-            },
-            1000: {
-                items: 4,
-                nav: false,
-                loop: false
+        loop: false,
+        margin: 30,
+        nav: false,
+        autoWidth: true,
+        items: 5,
+        responsive: {
+            1440: {
+                mouseDrag: false
             }
-        }
+        },
     });
 }
 

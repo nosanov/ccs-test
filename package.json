@@ -1,7 +1,7 @@
 {
-  "name": "__template",
+  "name": "ccs-test",
   "version": "1.0.0",
-  "description": "Template for front-end project",
+  "description": "Test",
   "main": "index.js",
   "scripts": {
     "build-css": "node-sass -w --include-path scss src/scss/main.scss dist/css/main.css --output-style compressed",

@@ -6,6 +6,7 @@ import Popup from './components/pop-up';
 import Anchor from './components/anchor';
 import { initOwlCarousel } from './components/owl';
 import initLazyload from '../../../test-layout/src/js/components/lazyload';
+import initSelect from './components/select';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,8 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const link = new Anchor('[data-type="anchor"]');
 
     // init carousel
-    // initOwlCarousel();
+    initOwlCarousel();
 
     // load images
     initLazyload();
+
+    // init select
+    initSelect();
 });
