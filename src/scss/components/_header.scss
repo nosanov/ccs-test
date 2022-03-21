@@ -1,0 +1,130 @@
+$header-height-xs: 44px;
+$header-height-sm: 52px;
+$header-height-lg: 100px;
+
+.header {
+    background: $black-transparent-0;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: $z-index + 10;
+
+    width: 100%;
+    height: $header-height-xs;
+
+    &__container {
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    &__logo {
+        color: $white;
+        @extend %raleway-font;
+        font-size: 1.8rem;
+        font-weight: 800;
+        text-transform: uppercase;
+
+        span {
+            color: $blue-light-1;
+        }
+    }
+
+    &__link {
+        color: $white;
+        display: block;
+
+        @extend %lato-font;
+        font-size: 1.3rem;
+        font-weight: 400;
+
+        margin-right: 60 * 100vw / 1920;
+
+        text-transform: uppercase;
+        @extend %transition-default;
+        transition-property: color;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            color: $blue;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        &_active {
+            color: $blue;
+        }
+    }
+
+    &__menu-button {
+        @extend %centered;
+        flex-direction: column;
+
+        position: relative;
+
+        width: 24px;
+        height: 24px;
+
+        i {
+            background: $white;
+            display: block;
+
+            margin-bottom: 5px;
+
+            @extend %transition-default;
+            transition-property: transform;
+
+            width: 100%;
+            height: 2px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &_opened {
+
+            i {
+                position: absolute;
+                top: calc(50% - 1px);
+                left: calc(50% - 10px);
+                width: 20px;
+
+                &:first-child {
+                    top: 50%;
+                    transform: rotate(45deg);
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:last-child {
+                    top: 50%;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: $breakpoint-sm) {
+        height: $header-height-sm;
+    }
+
+    @media only screen and (min-width: $breakpoint-lg) {
+        height: $header-height-lg;
+
+        &__logo {
+            font-size: 2.8rem;
+        }
+    }
+}

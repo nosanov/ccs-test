@@ -28,16 +28,105 @@
             id="header"
             data-behaviour="fixed"
         >
-            <div class="header__container">
-                <a data-type="anchor" href="#intro"></a>
-                <a data-type="anchor" href="#order"></a>
+            <div class="header__container container row row-between-x row-center-y">
+                <div class="header__logo">LoremIpsum.<span>net</span></div>
+
+                <div class="header__nav">
+                    <ul class="row">
+                        <li class="header__link header__link_active">
+                            <a class="is-hidden--sm-down" data-type="anchor" href="#intro">Бизнес</a>
+                        </li>
+                        <li class="header__link">
+                            <a class="is-hidden--sm-down" data-type="link" href="#about">О нас</a>
+                        </li>
+                        <li class="header__link">
+                            <a class="is-hidden--sm-down" data-type="link" href="#prices">Цены</a>
+                        </li>
+                        <li class="header__link">
+                            <a class="is-hidden--sm-down" data-type="anchor" href="#order">Оформить заказ</a>
+                        </li>
+                    </ul>
+
+                    <button
+                        class="header__menu-button is-hidden--sm-up"
+                        data-for="pop-up"
+                        data-target="#pop-up__menu"
+                    >
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </button>
+                </div>
             </div>
         </header>
 
         <!-- main content -->
         <main class="main">
             <section class="intro">
-                <h1>Lorem ipsum dolor sit amet<br> consectetur adipiscing</h1>
+                <picture class="intro__image lazy-picture">
+                    <source 
+                        type="image/webp" 
+                        media="(max-width: 479px)" 
+                        srcset="./assets/images/pix.png" 
+                        data-srcset="./assets/images/intro/intro__background_xs.webp, ./assets/images/intro/intro__background_xs-retina.webp 2x"
+                    >
+                    <source 
+                        type="image/jpeg" 
+                        media="(max-width: 479px)" 
+                        srcset="./assets/images/pix.png" 
+                        data-srcset="./assets/images/intro/intro__background_xs.jpg, ./assets/images/intro/intro__background_xs-retina.jpg 2x"
+                    >
+                    <source 
+                        type="image/webp" 
+                        media="(max-width: 767px)" 
+                        srcset="./assets/images/pix.png" 
+                        data-srcset="./assets/images/intro/intro__background_sm.webp, ./assets/images/intro/intro__background_sm-retina.webp 2x"
+                    >
+                    <source 
+                        type="image/jpeg" 
+                        media="(max-width: 767px)" 
+                        srcset="./assets/images/pix.png" 
+                        data-srcset="./assets/images/intro/intro__background_sm.jpg, ./assets/images/intro/intro__background_sm-retina.jpg 2x"
+                    >
+                    <source 
+                        type="image/webp" 
+                        media="(max-width: 1439px)" 
+                        srcset="./assets/images/pix.png" 
+                        data-srcset="./assets/images/intro/intro__background_lg.webp, ./assets/images/intro/intro__background_lg-retina.webp 2x"
+                    >
+                    <source 
+                        type="image/jpeg" 
+                        media="(max-width: 1439px)" 
+                        srcset="./assets/images/pix.png" 
+                        data-srcset="./assets/images/intro/intro__background_lg.jpg, ./assets/images/intro/intro__background_lg-retina.jpg 2x"
+                    >
+                    <source 
+                        type="image/webp" 
+                        media="(min-width: 1440px)" 
+                        srcset="./assets/images/pix.png" 
+                        data-srcset="./assets/images/intro/intro__background_xxl.webp, ./assets/images/intro/intro__background_xxl-retina.webp 2x"
+                    >
+                    <source 
+                        type="image/jpeg" 
+                        media="(min-width: 1440px)" 
+                        srcset="./assets/images/pix.png" 
+                        data-srcset="./assets/images/intro/intro__background_xxl.jpg, ./assets/images/intro/intro__background_xxl-retina.jpg 2x"
+                    >
+                    <img width="1919" height="850" src="./assets/images/pix.png" data-src="./assets/images/intro/intro__background_xxl.jpg, ./assets/images/intro/intro__background_xxl-retina.jpg 2x" alt="Заказ" loading="lazy">
+                </picture>
+                <div class="intro__container container column row-center-x">
+                    <h1 class="intro__title"><span>Lorem ipsum</span> dolor sit amet<br class="is-hidden--xsm-down"> consectetur <span>adipiscing</span></h1>
+                    <strong class="intro__text">At vero eos et accusamus et iusto odio dignissimos ducimus!</strong>
+                    <ul class="intro__list">
+                        <li>Totam rem aperiam eaque ipsa</li>
+                        <li>Sit voluptatem accusantium doloremque laudantium</li>
+                        <li>Sed ut perspiciatis, unde omnis iste natus error</li>
+                    </ul>
+                    <div class="row">
+                        <a href="#" class="intro__button intro__button_primary">Заказать</a>
+                        <a href="#" class="intro__button">Подробнее</a>
+                    </div>
+                </div>
             </section>
 
             <section class="order">
@@ -49,6 +138,28 @@
 
         <!-- footer content -->
         <footer></footer>
+
+        <div
+            id="#pop-up__menu"
+            class="pop-up pop-up-menu"
+        >
+            <div class="pop-up__container pop-up-menu__container container">
+                <ul class="pop-up-menu__list column">
+                    <li class="pop-up-menu__link">
+                        <a data-type="anchor" href="#intro">Бизнес</a>
+                    </li>
+                    <li class="pop-up-menu__link">
+                        <a data-type="link" href="#about">О нас</a>
+                    </li>
+                    <li class="pop-up-menu__link">
+                        <a data-type="link" href="#prices">Цены</a>
+                    </li>
+                    <li class="pop-up-menu__link">
+                        <a data-type="anchor" href="#order">Оформить заказ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <!-- for slider -->

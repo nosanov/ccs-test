@@ -1,0 +1,148 @@
+// grid, paddings, ...
+
+$breakpoint-xs:  320px; // xs-up    --mobile
+$breakpoint-xsm: 480px; // xsm-up   -- mobile
+$breakpoint-sm:  768px; // sm-up    --tablet
+$breakpoint-lg:  1440px; // lg-up   --desktop
+$breakpoint-xxl: 1920px; // xxl-up  --desktop
+
+$padding-xs: 0 24 * 100vw / 320;
+$padding-sm: 0 40 * 100vw / 768;
+$padding-lg: 0 134 * 100vw / 1440;
+$padding-xxl: 0 374 * 100vw / 1920;
+
+%padding-default {
+    padding: $padding-xs;
+    @media only screen and (min-width: $breakpoint-sm) {
+        padding: $padding-sm;
+    }
+    @media only screen and (min-width: $breakpoint-lg) {
+        padding: $padding-lg;
+    }
+    @media only screen and (min-width: $breakpoint-xxl) {
+        padding: $padding-xxl;
+    }
+}
+// ----------------------------
+
+
+
+// fonts, sizes, ...
+
+%raleway-font {
+    font-family: 'Raleway', sans-serif;
+}
+
+%lato-font {
+    font-family: 'Lato', sans-serif;
+}
+
+$font-size-default: 10px;
+// ----------------------------
+
+
+
+// colors
+
+$black: #000;
+$black-light: #3D4050;
+$black-lighter: #2A2B30;
+$black-transparent-0: rgba(16, 16, 29, 0.9);
+$black-transparent-1: rgba(39, 39, 51, 0.9);
+$blue: #43ABF0;
+$blue-light-0: #3E9CDC;
+$blue-light-1: #42A9ED;
+$dark: #272733;
+$grey: #6F6D7B;
+$grey-light: #BBBBBB;
+$grey-lighter: #C4C4C4;
+$grey-transparent: rgba(61, 64, 80, 0.85);
+$white: #fff;
+$white-transparent: rgba(255, 255, 255, 0.85);
+// ----------------------------
+
+
+
+// class
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.row-between-x {
+    justify-content: space-between;
+}
+
+.row-center-x {
+    justify-content: center;
+}
+
+.row-center-y {
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    @extend %padding-default;
+}
+
+%centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: $breakpoint-xsm - 1) {
+    .is-hidden--xsm-down {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: $breakpoint-sm - 1) {
+    .is-hidden--sm-down {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: $breakpoint-sm) {
+    .is-hidden--sm-up {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: $breakpoint-lg) {
+    .is-hidden--lg-up {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: $breakpoint-xxl) {
+    .is-hidden--xxl-up {
+        display: none !important;
+    }
+}
+// ----------------------------
+
+
+
+// etc
+$z-index: 1;
+
+$transition-timing-function: ease-in-out;
+$transition-duration: 0.4s;
+$transition-duration-slow: 0.8s;
+
+%transition-default {
+    transition-timing-function: $transition-timing-function;
+    transition-duration: $transition-duration;
+}
+
+%transition-slow {
+    transition-timing-function: $transition-timing-function;
+    transition-duration: $transition-duration-slow;
+}
