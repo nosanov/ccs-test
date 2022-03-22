@@ -1,0 +1,132 @@
+.footer {
+    background: $dark-light;
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        width: 100%;
+    }
+
+    &__copyright {
+        color: $white;
+        @extend %lato-font;
+        font-size: 1.1rem;
+        font-weight: 400;
+
+        max-width: 100px;
+        // text-align: center;
+    }
+
+    &__before,
+    &__after {
+        background: $grey-light-0;
+        width: 1px;
+        height: 18px;
+    }
+
+    &__payment {
+        img {
+            display: block;
+            width: 20px;
+            height: 20px;
+        }
+
+        span {
+            color: $grey-light-0;
+            display: none;
+            @extend %lato-font;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+    }
+
+    &__contact {
+        svg {
+            display: block;
+            width: 20px;
+            height: 20px;
+
+            path {
+                @extend %transition-default;
+                transition-property: fill;
+            }
+        }
+
+        span {
+            color: $white;
+            display: none;
+            @extend %lato-font;
+            font-size: 1.1rem;
+            font-weight: 400;
+
+            @extend %transition-default;
+            transition-property: color;
+        }
+    }
+
+    @media only screen and (min-width: $breakpoint-md) {
+
+        &__copyright {
+            max-width: unset;
+        }
+
+        &__payment {
+            img {
+                margin-right: 10px;
+            }
+
+            span {
+                display: block;
+            }
+        }
+
+        &__contact {
+
+            &:hover {
+                svg path {
+                    fill: $white;
+                }
+
+                span {
+                    color: $blue-light-0;
+                }
+            }
+
+            svg {
+                display: block;
+                margin-right: 10px;
+                width: 20px;
+                height: 20px;
+            }
+
+            span {
+                display: block;
+            }
+        }
+    }
+
+    @media only screen and (min-width: $breakpoint-lg) {
+
+        &__copyright {
+            font-size: 1.3rem;
+        }
+
+        &__payment {
+            span {
+                font-size: 1.3rem;
+            }
+        }
+
+        &__contact {
+            span {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
