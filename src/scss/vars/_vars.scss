@@ -1,10 +1,11 @@
 // grid, paddings, ...
 
-$breakpoint-xs:  320px; // xs-up    --mobile
-$breakpoint-xsm: 480px; // xsm-up   -- mobile
-$breakpoint-sm:  768px; // sm-up    --tablet
-$breakpoint-lg:  1440px; // lg-up   --desktop
-$breakpoint-xxl: 1920px; // xxl-up  --desktop
+$breakpoint-xs:  320px;  // xs-up    --mobile
+$breakpoint-xsm: 480px;  // xsm-up   --mobile
+$breakpoint-sm:  768px;  // sm-up    --tablet
+$breakpoint-md:  1280px; // md-up    --desktop
+$breakpoint-lg:  1440px; // lg-up    --desktop
+$breakpoint-xxl: 1920px; // xxl-up   --desktop
 
 $padding-xs: 0 24 * 100vw / 320;
 $padding-sm: 0 40 * 100vw / 768;

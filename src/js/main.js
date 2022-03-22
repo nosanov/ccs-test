@@ -7,6 +7,7 @@ import Anchor from './components/anchor';
 import { initOwlCarousel } from './components/owl';
 import initLazyload from '../../../test-layout/src/js/components/lazyload';
 import initSelect from './components/select';
+import Form from './components/form';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = new Header('#header');
 
     // init forms
-    // const form = new Form('#form-0');
+    const form = new Form('#order__form');
 
     // init anchors
     const link = new Anchor('[data-type="anchor"]');

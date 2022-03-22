@@ -43,10 +43,9 @@ export default function initSelect() {
 
                 selectTitle.classList.toggle('opened');
                 selectOptions.classList.toggle('opened');
+                selectTitle.classList.remove('invalid');
             });
         }
-
-        console.log(options);
 
         parent.appendChild(selectTitle);
         parent.appendChild(selectOptions);
