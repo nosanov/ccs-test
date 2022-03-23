@@ -30,7 +30,6 @@ html, body {
 
 body {
     min-width: $breakpoint-xs;
-    overflow-x: scroll;
 
     &.fixed {
         overflow: hidden;
