@@ -4,7 +4,7 @@ export default class Anchor {
         this.link = document.querySelector(el);
 
         // standard or advanced
-        this.headerBehaviour = 'advanced';
+        this.headerBehaviour = 'standard';
         this.animationDuration = 600;
 
         this.init();

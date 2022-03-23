@@ -35,7 +35,6 @@ $header-height-lg: 100px;
     }
 
     &__link {
-        color: $white;
         display: block;
 
         @extend %lato-font;
@@ -45,27 +44,31 @@ $header-height-lg: 100px;
         margin-right: 60 * 100vw / 1920;
 
         text-transform: uppercase;
-        @extend %transition-default;
-        transition-property: color;
 
         &:last-child {
             margin-right: 0;
         }
 
-        &:hover {
-            color: $blue;
-        }
-
         a {
-            color: inherit;
+            color: $white;
+
+            @extend %transition-default;
+            transition-property: color;
+
+            &:hover {
+                color: $blue;
+            }
         }
 
         &_active {
-            color: $blue;
+            a {
+                color: $blue;
+            }
         }
     }
 
     &__menu-button {
+        cursor: pointer;
         @extend %centered;
         flex-direction: column;
 

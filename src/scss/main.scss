@@ -4,7 +4,7 @@
     box-sizing: border-box;
     box-shadow: none;
 
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Lato', sans-serif;
 
     list-style: none;
 
@@ -30,20 +30,9 @@ html, body {
 
 body {
     min-width: $breakpoint-xs;
+    overflow-x: scroll;
 
     &.fixed {
         overflow: hidden;
     }
-}
-
-main.main {
-    // padding-top: $header-height-xs;
-
-    // @media only screen and (min-width: $breakpoint-sm) {
-    //     padding-top: $header-height-sm;
-    // }
-
-    // @media only screen and (min-width: $breakpoint-lg) {
-    //     padding-top: $header-height-lg;
-    // }
 }

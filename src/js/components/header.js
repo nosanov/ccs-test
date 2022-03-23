@@ -5,6 +5,7 @@ export default class Header {
         this.header = document.querySelector(this.el);
 
         this.init();
+        this.setLinkListeners();
     }
 
     init() {
@@ -61,6 +62,19 @@ export default class Header {
         });
     }
 
+    setLinkListeners() {
+        const links = this.header.querySelectorAll('.header__link');
+
+        links.forEach((link) => {
+            link.addEventListener('click', () => {
+                if (this.header.querySelector('.header__link_active')) {
+                    this.header.querySelector('.header__link_active').classList.remove('header__link_active');
+                }
+                link.classList.toggle('header__link_active');
+            });
+        })
+    }
+
     /*
     ** change state for menu button
     */
@@ -70,7 +84,7 @@ export default class Header {
         if (menuBtn) {
             menuBtn.addEventListener('click', () => {
                 menuBtn.classList.toggle('header__menu-button_opened');
-            })
+            });
         }
     }
 }

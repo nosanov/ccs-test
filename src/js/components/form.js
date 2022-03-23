@@ -105,6 +105,7 @@ export default class Form {
         }
 
         if (checkSelect() && checkEmail() && checkName() && checkFile()) {
+            data.type = type.value;
             data.name = nameValue;
             data.email = emailValue;
             data.range = rangeValue;

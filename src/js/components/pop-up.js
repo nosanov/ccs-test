@@ -4,6 +4,7 @@ export default class Popup {
         this.el = el;
         this.popUp = document.getElementById(this.el);
         this.closeBtn = this.popUp.querySelector('.pop-up__close');
+        this.links = this.popUp.querySelectorAll('a[data-type="anchor"]');
 
         document.querySelectorAll('[data-for="pop-up"]').forEach(button => {
             if (button.dataset.target == this.el) {
@@ -29,6 +30,16 @@ export default class Popup {
                 });
             }
         }
+
+        this.links.forEach((link) => {
+            link.addEventListener('click', () => {
+                const menuBtn = document.querySelector('.header__menu-button');
+                if (menuBtn) {
+                    menuBtn.classList.toggle('header__menu-button_opened');
+                }
+                this.toggle(this.popUp);
+            });
+        });
     }
 
     toggle(popUp) {

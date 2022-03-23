@@ -1,6 +1,3 @@
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-
 import Header from './components/header';
 import Popup from './components/pop-up';
 import Anchor from './components/anchor';
@@ -9,15 +6,7 @@ import initLazyload from '../../../test-layout/src/js/components/lazyload';
 import initSelect from './components/select';
 import Form from './components/form';
 
-gsap.registerPlugin(ScrollTrigger);
-
-window.addEventListener('load', () => {
-    // console.warn('loaded');
-});
-
 document.addEventListener('DOMContentLoaded', () => {
-    // console.warn('DOMContentLoaded');
-
     // init pop-ups
     document.querySelectorAll('[data-for="pop-up"]').forEach(button => {
         const popUp = new Popup(button.dataset.target);

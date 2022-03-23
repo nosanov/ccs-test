@@ -62,53 +62,15 @@
 
         <!-- main content -->
         <main class="main">
-            <section class="intro">
+            <section class="intro" id="intro">
                 <picture class="intro__image lazy-picture">
                     <source 
                         type="image/webp" 
-                        media="(max-width: 479px)" 
-                        srcset="./assets/images/pix.png" 
-                        data-srcset="./assets/images/intro/intro__background_xs.webp, ./assets/images/intro/intro__background_xs-retina.webp 2x"
-                    >
-                    <source 
-                        type="image/jpeg" 
-                        media="(max-width: 479px)" 
-                        srcset="./assets/images/pix.png" 
-                        data-srcset="./assets/images/intro/intro__background_xs.jpg, ./assets/images/intro/intro__background_xs-retina.jpg 2x"
-                    >
-                    <source 
-                        type="image/webp" 
-                        media="(max-width: 767px)" 
-                        srcset="./assets/images/pix.png" 
-                        data-srcset="./assets/images/intro/intro__background_sm.webp, ./assets/images/intro/intro__background_sm-retina.webp 2x"
-                    >
-                    <source 
-                        type="image/jpeg" 
-                        media="(max-width: 767px)" 
-                        srcset="./assets/images/pix.png" 
-                        data-srcset="./assets/images/intro/intro__background_sm.jpg, ./assets/images/intro/intro__background_sm-retina.jpg 2x"
-                    >
-                    <source 
-                        type="image/webp" 
-                        media="(max-width: 1439px)" 
-                        srcset="./assets/images/pix.png" 
-                        data-srcset="./assets/images/intro/intro__background_lg.webp, ./assets/images/intro/intro__background_lg-retina.webp 2x"
-                    >
-                    <source 
-                        type="image/jpeg" 
-                        media="(max-width: 1439px)" 
-                        srcset="./assets/images/pix.png" 
-                        data-srcset="./assets/images/intro/intro__background_lg.jpg, ./assets/images/intro/intro__background_lg-retina.jpg 2x"
-                    >
-                    <source 
-                        type="image/webp" 
-                        media="(min-width: 1440px)" 
                         srcset="./assets/images/pix.png" 
                         data-srcset="./assets/images/intro/intro__background_xxl.webp, ./assets/images/intro/intro__background_xxl-retina.webp 2x"
                     >
                     <source 
                         type="image/jpeg" 
-                        media="(min-width: 1440px)" 
                         srcset="./assets/images/pix.png" 
                         data-srcset="./assets/images/intro/intro__background_xxl.jpg, ./assets/images/intro/intro__background_xxl-retina.jpg 2x"
                     >
@@ -123,14 +85,13 @@
                         <li>Sed ut perspiciatis, unde omnis iste natus error</li>
                     </ul>
                     <div class="row">
-                        <a href="#" class="intro__button intro__button_primary">Заказать</a>
+                        <a data-type="anchor" href="#order" class="intro__button intro__button_primary">Заказать</a>
                         <a href="#" class="intro__button">Подробнее</a>
                     </div>
                 </div>
             </section>
 
-            <section class="order">
-                <!-- <img src="./assets/images/__test/order.jpg" style="position: absolute; top: 0; right: 0; left: 0; display: block; width: 100%; height: auto; pointer-events: none; opacity: 0.5;" alt=""> -->
+            <section class="order" id="order">
                 <picture class="order__background lazy-picture">
                     <source 
                         type="image/webp"  
@@ -138,11 +99,11 @@
                         data-srcset="./assets/images/order/order__background_xxl.webp, ./assets/images/order/order__background_xxl-retina.webp 2x"
                     >
                     <source 
-                        type="image/jpeg"  
+                        type="image/png"  
                         srcset="./assets/images/pix.png" 
-                        data-srcset="./assets/images/order/order__background_xxl.jpg, ./assets/images/order/order__background_xxl-retina.jpg 2x"
+                        data-srcset="./assets/images/order/order__background_xxl.png, ./assets/images/order/order__background_xxl-retina.png 2x"
                     >
-                    <img width="1920" height="920" src="./assets/images/pix.png" data-src="./assets/images/order/order__background_xxl.jpg, ./assets/images/order/order__background_xxl-retina.jpg 2x" alt="background" loading="lazy">
+                    <img width="1920" height="920" src="./assets/images/pix.png" data-src="./assets/images/order/order__background_xxl.png, ./assets/images/order/order__background_xxl-retina.png 2x" alt="background" loading="lazy">
                 </picture>
                 <div class="order__container">
                     <h2 class="order__title container">Оформление  <span>Заказа</span></h2>
@@ -197,7 +158,7 @@
 
                     <form method="POST" enctype="multipart/form-data" class="order__form container" id="order__form">
                         <div class="order__row">
-                            <div class="order__element order__select">
+                            <div class="order__element order__select" style="position: relative;">
                                 <select name="system-type" id="system-type">
                                     <option value="select">Выберите тип системы</option>
                                     <option value="sed-ut-perspiciatis">Sed ut perspiciatis</option>
@@ -249,7 +210,7 @@
         </main>
 
         <!-- footer content -->
-        <footer class="footer" style="position: relative;">
+        <footer class="footer">
             <!-- <img src="./assets/images/__test/footer.jpg" style="position: absolute; top: 0; right: 0; left: 0; display: block; width: 100%; height: auto; pointer-events: none; opacity: 0.5;" alt=""> -->
             <div class="footer__container container">
                 <div class="footer__copyright">© 2018 «LOREMIPSUM.NET» Все права защищены.</div>

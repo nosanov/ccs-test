@@ -8,7 +8,9 @@ export default function initSelect() {
         const selectTitle = document.createElement('div');
         selectTitle.classList.add('order__select-title', 'order__input');
 
-        // container for other options
+        // container for other options (needs for scroll-padding)
+        const selectOptionsContainer = document.createElement('div');
+        selectOptionsContainer.classList.add('order__select-container');
         const selectOptions = document.createElement('div');
         selectOptions.classList.add('order__select-options');
 
@@ -20,7 +22,7 @@ export default function initSelect() {
         // set up events for title
         selectTitle.addEventListener('click', () => {
             selectTitle.classList.toggle('opened');
-            selectOptions.classList.toggle('opened');
+            selectOptionsContainer.classList.toggle('opened');
         });
 
         // from 2nd option for other elements
@@ -42,12 +44,13 @@ export default function initSelect() {
                 selectTitle.innerText = selectOption.textContent;
 
                 selectTitle.classList.toggle('opened');
-                selectOptions.classList.toggle('opened');
+                selectOptionsContainer.classList.toggle('opened');
                 selectTitle.classList.remove('invalid');
             });
         }
 
+        selectOptionsContainer.appendChild(selectOptions);
         parent.appendChild(selectTitle);
-        parent.appendChild(selectOptions);
+        parent.appendChild(selectOptionsContainer);
     }
 }
